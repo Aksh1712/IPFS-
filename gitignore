@@ -1,0 +1,11 @@
+Ignore IPFS data directory
+
+.ipfs/
+
+Ignore temporary files
+
+*.tar.gz *.tmp
+
+Ignore OS-specific files
+
+.DS_Store Thumbs.db
