@@ -2,16 +2,6 @@
 
 This repository provides a guide to install the InterPlanetary File System (IPFS) and perform basic file uploads to the IPFS network. It includes instructions for setting up IPFS on your machine, a sample script to upload files, and a sample file for testing.
 
-## Repository Structure
-```
-ipfs-install-upload/
-├── README.md              # Installation and usage instructions
-├── scripts/
-│   └── upload_to_ipfs.sh  # Bash script for uploading files to IPFS
-├── sample_files/
-│   └── hello.txt          # Sample file for testing uploads
-└── LICENSE                # MIT License
-```
 
 ## Prerequisites
 - A computer running macOS, Linux, or Windows.
