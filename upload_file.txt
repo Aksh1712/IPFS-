@@ -1,0 +1,34 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <file_path>"
+    exit 1
+fi
+
+FILE_PATH=$1
+
+# Check if file exists
+if [ ! -f "$FILE_PATH" ]; then
+    echo "Error: File not found"
+    exit 1
+fi
+
+# Check if IPFS daemon is running
+if ! pgrep -x "ipfs" > /dev/null; then
+    echo "Starting IPFS daemon..."
+    ipfs daemon &
+    sleep 5
+fi
+
+# Add file to IPFS
+echo "Uploading file to IPFS..."
+HASH=$(ipfs add -Q "$FILE_PATH")
+
+if [ $? -eq 0 ]; then
+    echo "File uploaded successfully!"
+    echo "IPFS Hash: $HASH"
+    echo "Access at: https://ipfs.io/ipfs/$HASH"
+else
+    echo "Error uploading file"
+    exit 1
+fi
